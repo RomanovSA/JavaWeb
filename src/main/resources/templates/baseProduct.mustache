@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
+    <form method = "post">
+        <div>Input product</div>
+        <input type = "text" name = "product_name" placeholder = "input product name" />
+        <input type = "text" name = "price" placeholder = "input price" />
+        <input type = "text" name = "vendor_code" placeholder = "input vendor code" />
+        <input type = "text" name = "quantity" placeholder = "input quantity" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type = "submit">Add</button>
+    </form>
+</div>
+<div>Products</div>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">id provider</th>
+            <th style="border: 1px solid black">product name</th>
+            <th style="border: 1px solid black">price</th>
+            <th style="border: 1px solid black">vendor code</th>
+            <th style="border: 1px solid black">quantity</th>
+            <th style="border: 1px solid black">id saloon</th>
+        </tr>
+        {{#products}}
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">{{id_provider}}</td>
+            <td style="border: 1px solid black">{{product_name}}</td>
+            <td style="border: 1px solid black">{{price}}</td>
+            <td style="border: 1px solid black">{{vendor_code}}</td>
+            <td style="border: 1px solid black">{{quantity}}</td>
+            <td style="border: 1px solid black">{{id_saloon}}</td>
+        </tr>
+        {{/products}}
+    </table>
+</body>
+<a href = "/baseSaloon">Saloon</a>
+<a href = "/baseProvider">Provider</a>
+<a href = "/baseSaleOfProduct">SaleOfProduct</a>
+<a href = "/baseRecord">Record</a>
+<a href = "/main">Customer</a>
+<a href = "/baseService">Service</a>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
+    <form method = "post">
+        <div>Input saloon</div>
+        <input type = "text" name = "saloon_name" placeholder = "input saloon name" />
+        <input type = "text" name = "saloon_address" placeholder = "input saloon address" />
+        <input type = "text" name = "saloon_phone_number" placeholder = "input saloon phone number" />
+        <input type = "text" name = "saloon_email" placeholder = "input saloon email" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type = "submit">Add</button>
+    </form>
+</div>
+<div>Saloons</div>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">id provider</th>
+            <th style="border: 1px solid black">saloon name</th>
+            <th style="border: 1px solid black">saloon address</th>
+            <th style="border: 1px solid black">saloon phone number</th>
+            <th style="border: 1px solid black">saloon email</th>
+        </tr>
+        {{#saloons}}
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">{{id_provider}}</td>
+            <td style="border: 1px solid black">{{saloon_name}}</td>
+            <td style="border: 1px solid black">{{saloon_address}}</td>
+            <td style="border: 1px solid black">{{saloon_phone_number}}</td>
+            <td style="border: 1px solid black">{{saloon_email}}</td>
+        </tr>
+        {{/saloons}}
+    </table>
+</body>
+<a href = "/baseRecord">Record</a>
+<a href = "/baseSaleOfProduct">SaleOfProduct</a>
+<a href = "/baseProvider">Provider</a>
+<a href = "/main">Customer</a>
+<a href = "/baseService">Service</a>
+</html>

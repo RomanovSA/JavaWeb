@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
+    <form method = "post">
+        <div>Input record</div>
+        <input type = "text" name = "date" placeholder = "input date" />
+        <input type = "text" name = "time" placeholder = "input time" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type = "submit">Add</button>
+    </form>
+</div>
+<div>Records</div>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">id employee</th>
+            <th style="border: 1px solid black">date</th>
+            <th style="border: 1px solid black">time</th>
+            <th style="border: 1px solid black">id service</th>
+            <th style="border: 1px solid black">id customer</th>
+        </tr>
+        {{#records}}
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">{{id_employee}}</td>
+            <td style="border: 1px solid black">{{date}}</td>
+            <td style="border: 1px solid black">{{time}}</td>
+            <td style="border: 1px solid black">{{id_service}}</td>
+            <td style="border: 1px solid black">{{id_customer}}</td>
+        </tr>
+        {{/records}}
+    </table>
+</body>
+<a href = "/baseSaloon">Saloon</a>
+<a href = "/baseProduct">Product</a>
+<a href = "/baseSaleOfProduct">SaleOfProduct</a>
+<a href = "/baseProvider">Provider</a>
+<a href = "/main">Customer</a>
+<a href = "/baseService">Service</a>
+</html>

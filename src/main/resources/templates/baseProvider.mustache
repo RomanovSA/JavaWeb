@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
+    <form method = "post">
+        <div>Input provider</div>
+        <input type = "text" name = "provider_name" placeholder = "input provider name" />
+        <input type = "text" name = "provider_address" placeholder = "input provider address" />
+        <input type = "text" name = "provider_phone_number" placeholder = "input provider phone number" />
+        <input type = "text" name = "contract_number" placeholder = "input contract number" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type = "submit">Add</button>
+    </form>
+</div>
+<div>Providers</div>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">id saloon</th>
+            <th style="border: 1px solid black">provider name</th>
+            <th style="border: 1px solid black">provider address</th>
+            <th style="border: 1px solid black">provider phone number</th>
+            <th style="border: 1px solid black">contract number</th>
+        </tr>
+        {{#providers}}
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">{{id_saloon}}</td>
+            <td style="border: 1px solid black">{{provider_name}}</td>
+            <td style="border: 1px solid black">{{provider_address}}</td>
+            <td style="border: 1px solid black">{{provider_phone_number}}</td>
+            <td style="border: 1px solid black">{{contract_number}}</td>
+        </tr>
+        {{/providers}}
+    </table>
+</body>
+<a href = "/baseSaloon">Saloon</a>
+<a href = "/baseProduct">Product</a>
+<a href = "/baseSaleOfProduct">SaleOfProduct</a>
+<a href = "/baseRecord">Record</a>
+<a href = "/main">Customer</a>
+<a href = "/baseService">Service</a>
+</html>

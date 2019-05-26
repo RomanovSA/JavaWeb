@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
+    <form method = "post">
+        <div>Input service</div>
+        <input type = "text" name = "service_name" placeholder = "input service name" />
+        <input type = "text" name = "cost" placeholder = "input cost" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type = "submit">Add</button>
+    </form>
+</div>
+<div>Services</div>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">service name</th>
+            <th style="border: 1px solid black">cost</th>
+        </tr>
+        {{#services}}
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">{{service_name}}</td>
+            <td style="border: 1px solid black">{{cost}}</td>
+        </tr>
+        {{/services}}
+    </table>
+</body>
+<a href = "/baseSaloon">Saloon</a>
+<a href = "/baseProvider">Provider</a>
+<a href = "/baseProduct">Product</a>
+<a href = "/baseSaleOfProduct">SaleOfProduct</a>
+<a href = "/baseRecord">Record</a>
+<a href = "/main">Customer</a>
+</html>
